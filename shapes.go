@@ -23,10 +23,19 @@ type Shape interface {
 	Area() float64
 }
 
+type Triangle struct {
+	Base   float64
+	Height float64
+}
+
 func Perimeter(rectangle Rectangle) float64 {
 	return 2 * (rectangle.Width + rectangle.Height)
 }
 
 func Area(rectangle Rectangle) float64 {
 	return rectangle.Width * rectangle.Height
+}
+
+func (c Triangle) Area() float64 {
+	return c.Base * c.Height * 0.5
 }
